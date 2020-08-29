@@ -37,8 +37,10 @@ collections:
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Featured Image", name: "featuredimage", widget: image}
+      - {label: "Photos", name: "images", widget: image, media_library: config: multiple: true}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Campus", name: "campus",  widget: "select", options: ["main", "janiuay", "pototan", "himamaylan", "caf", "calinog"]}
+      - {label: "Contact", name: "contact", widget: "markdown"}
 
   - name: "admin"
     label: "Admin Buildings"
@@ -51,12 +53,14 @@ collections:
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Featured Image", name: "featuredimage", widget: image}
+      - {label: "Photos", name: "images", widget: image, media_library: config: multiple: true}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Campus", name: "campus",  widget: "select", options: ["main", "janiuay", "pototan", "himamaylan", "caf", "calinog"]}
+      - {label: "Contact", name: "contact", widget: "markdown"}
 
   - name: "staff"
     label: "Staff"
-    folder: "src/pages/admin"
+    folder: "src/pages/staff"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
@@ -66,4 +70,31 @@ collections:
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Profile Image", name: "featuredimage", widget: image}      
       - {label: "Campus", name: "campus",  widget: "select", options: ["main", "janiuay", "pototan", "himamaylan", "caf", "calinog"]}
+      - {label: "Office", name: "office",  widget: "list"}
+
+  - name: "announcements"
+    label: "Announcements"
+    folder: "src/pages/announcements"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "default"}
+      - {label: "Name", name: "name", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Profile Image", name: "featuredimage", widget: image}      
+      - {label: "Campus", name: "campus",  widget: "select", options: ["main", "janiuay", "pototan", "himamaylan", "caf", "calinog"]}
+      - {label: "Office", name: "office",  widget: "list"}
+  
+  - name: "messages"
+    label: "Messages"
+    folder: "src/pages/messages"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "default"}
+      - {label: "Name", name: "name", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Position", name: "position", widget: "text"}
+      - {label: "Profile Image", name: "featuredimage", widget: image}      
       - {label: "Office", name: "office",  widget: "list"}
